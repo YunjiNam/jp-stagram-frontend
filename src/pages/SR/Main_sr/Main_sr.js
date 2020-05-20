@@ -1,14 +1,14 @@
 import React from "react";
-import Feed from "../../components/Feed";
-import MainRight from "../../components/MainRight";
+import Feed_sr from "../../components/Feed_sr";
+import MainRight_sr from "../../components/MainRight_sr";
 import { withRouter } from "react-router-dom";
-import "./Main.scss";
-import logo from "../../images/logo_text.png";
-import explore from "../../images/explore.png";
-import heart from "../../images/heart.png";
-import profile from "../../images/profile.png";
+import "./Main_sr.scss";
+import logo from "../../images/SR/logo_text.png";
+import explore from "../../images/SR/explore.png";
+import heart from "../../images/SR/heart.png";
+import profile from "../../images/SR/profile.png";
 
-export class Main extends React.Component {
+export class Main_sr extends React.Component {
   render() {
     return (
       <div className="Main">
@@ -29,13 +29,13 @@ export class Main extends React.Component {
         </nav>
         <main>
           <div className="feeds">
-            <Feed />
+            <Feed_sr />
           </div>
-          <MainRight />
+          <MainRight_sr />
         </main>
       </div>
     );
   }
 }
 
-export default withRouter(Main);
+export default withRouter(Main_sr);

@@ -1,14 +1,14 @@
 import React from "react";
-import "./Feed.scss";
-import jelmi_profile from "../images/jel_profile.jpg";
-import jelmi_feed from "../images/jeolmi.jpg";
-import icon_heart from "../images/heart.png";
-import icon_comment from "../images/comment.png";
-import icon_share from "../images/share.png";
-import icon_bookmark from "../images/bookmark.png";
-import icon_more from "../images/more.png";
+import "./Feed_sr.scss";
+import jelmi_profile from "../images/SR/jel_profile.jpg";
+import jelmi_feed from "../images/SR/jeolmi.jpg";
+import icon_heart from "../images/SR/heart.png";
+import icon_comment from "../images/SR/comment.png";
+import icon_share from "../images/SR/share.png";
+import icon_bookmark from "../images/SR/bookmark.png";
+import icon_more from "../images/SR/more.png";
 
-export class Feed extends React.Component {
+export class Feed_sr extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -115,4 +115,4 @@ export class Feed extends React.Component {
   }
 }
 
-export default Feed;
+export default Feed_sr;

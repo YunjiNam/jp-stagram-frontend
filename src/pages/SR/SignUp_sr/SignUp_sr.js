@@ -1,14 +1,12 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
-import "./SignUp.scss";
-import biglogo from "../../images/logo_text.png";
+import "./SignUp_sr.scss";
+import biglogo from "../../images/YJ/logo_text.png";
 
-class SignUp extends React.Component {
+class SignUp_sr extends React.Component {
   constructor() {
-    super()
-    this.state = {
-      
-    }
+    super();
+    this.state = {};
   }
   render() {
     return (
@@ -93,4 +91,4 @@ class SignUp extends React.Component {
     );
   }
 }
-export default withRouter(SignUp);
+export default withRouter(SignUp_sr);
