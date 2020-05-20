@@ -4,8 +4,9 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-import Main from './pages/SR/Main/Main';
+import Main from './pages/SR/Main_sr/Main';
 import Main from './pages/YJ/Main/Main';
+
 
 
 class Routes extends React.Component {

@@ -1,7 +1,7 @@
 import React from 'react';
-import './Story.scss'
+import './Story_yj.scss'
 
-class Story extends React.Component {
+class Story_yj extends React.Component {
     render() {
         return(
             <div className="Story">
@@ -21,4 +21,4 @@ class Story extends React.Component {
     }
 }
 
-export default Story;
+export default Story_yj;

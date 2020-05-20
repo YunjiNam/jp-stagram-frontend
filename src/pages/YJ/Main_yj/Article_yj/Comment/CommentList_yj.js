@@ -1,15 +1,12 @@
 import React from 'react';
-import Comment from './Comment';
+import Comment_yj from './Comment_yj';
 
-class CommentList extends React.Component {
+class CommentList_yj extends React.Component {
     render() {
         const { comments } = this.props;
         const commentList = comments.map(
             ({id, text }) => (
-                <Comment
-                    text={text}
-                    key={id}
-                />
+                <Comment_yj text={text} key={id} />
             )
         );
         return(
@@ -20,4 +17,4 @@ class CommentList extends React.Component {
     }
 }
 
-export default CommentList;
+export default CommentList_yj;

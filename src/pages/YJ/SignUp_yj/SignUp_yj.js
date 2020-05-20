@@ -1,9 +1,9 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
-import "./SignUp.scss";
-import biglogo from "../../images/logo_text.png";
+import "./SignUp_yj.scss";
+import biglogo from "../../images/YJ/logo_text.png";
 
-class SignUp extends React.Component {
+class SignUp_yj extends React.Component {
   constructor() {
     super()
     this.state = {
@@ -93,4 +93,4 @@ class SignUp extends React.Component {
     );
   }
 }
-export default withRouter(SignUp);
+export default withRouter(SignUp_yj);
