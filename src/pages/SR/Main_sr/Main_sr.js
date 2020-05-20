@@ -1,12 +1,12 @@
 import React from "react";
-import Feed_sr from "../../components/Feed_sr";
-import MainRight_sr from "../../components/MainRight_sr";
+import Feed_sr from "../../../components/SR/Feed_sr/Feed_sr";
+import MainRight_sr from "../../../components/SR/MainRight_sr/MainRight_sr";
 import { withRouter } from "react-router-dom";
 import "./Main_sr.scss";
-import logo from "../../images/SR/logo_text.png";
-import explore from "../../images/SR/explore.png";
-import heart from "../../images/SR/heart.png";
-import profile from "../../images/SR/profile.png";
+import logo from "../../../images/SR/logo_text.png";
+import explore from "../../../images/SR/explore.png";
+import heart from "../../../images/SR/heart.png";
+import profile from "../../../images/SR/profile.png";
 
 export class Main_sr extends React.Component {
   render() {

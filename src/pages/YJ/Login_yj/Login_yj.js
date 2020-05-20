@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import "./Login_yj.scss";
-import biglogo from "../../images/YJ/logo_text.png";
+import biglogo from "../../../images/YJ/logo_text.png";
 
 class Login_yj extends React.Component {
   constructor(props) {
@@ -24,12 +24,12 @@ class Login_yj extends React.Component {
       pwValue: event.target.value,
     });
   };
-  // showValue = () => {
-  //   console.log("ID : ", this.state.idValue, "Password : ", this.state.pwValue);
-  //   this.state.idValue.includes("@") && this.state.pwValue.length >= 5
-  //     ? this.props.history.push("/main")
-  //     : alert("다시 입력해 주새요!");
-  // };
+  showValue = () => {
+    console.log("ID : ", this.state.idValue, "Password : ", this.state.pwValue);
+    this.state.idValue.includes("@") && this.state.pwValue.length >= 5
+      ? this.props.history.push("/main_yj")
+      : alert("다시 입력해 주새요!");
+  };
   changeBtnColor = () => {
     this.state.idValue.includes("@") && this.state.pwValue.length >= 5
       ? this.setState({ btnActive: true })

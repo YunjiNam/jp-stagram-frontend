@@ -1,7 +1,7 @@
 import React from "react";
-import logoImg from "../../images/SR/logo_text.png";
+import logoImg from "../../../images/SR/logo_text.png";
 import { Link, withRouter } from "react-router-dom";
-import "../../pages/Login_sr/Login_sr.scss";
+import "./Login_sr.scss";
 
 export class Login_sr extends React.Component {
   constructor() {
@@ -14,7 +14,7 @@ export class Login_sr extends React.Component {
   }
 
   goToMain() {
-    this.props.history.push("/main");
+    this.props.history.push("/main_sr");
     console.log("this.props: ", this.props);
   }
 

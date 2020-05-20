@@ -1,5 +1,5 @@
 import React from 'react';
-import CommentList_yj from './Comment/CommentList_yj';
+import CommentList_yj from './Comment_yj/CommentList_yj';
 import './Article_yj.scss';
 
 class Article_yj extends React.Component {

@@ -1,5 +1,5 @@
 import React from "react";
-import sewoon from "../images/SR/sewoon.jpg";
+import sewoon from "../../../images/SR/sewoon.jpg";
 import "./Others_sr.scss";
 
 export class Others_sr extends React.Component {

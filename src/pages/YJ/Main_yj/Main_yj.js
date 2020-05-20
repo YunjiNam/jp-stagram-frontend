@@ -3,7 +3,7 @@ import Article_yj from './Article_yj/Article_yj';
 import Story_yj from './Stories_yj/Story_yj';
 import Recommend_yj from './Recommends_yj/Recommend_yj';
 import './Main_yj.scss'
-import logo from "../../images/YJ/logo_text.png"
+import logo from "../../../images/YJ/logo_text.png"
 class Main_yj extends React.Component {
     render() {
         return(

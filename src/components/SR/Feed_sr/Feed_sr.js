@@ -1,12 +1,12 @@
 import React from "react";
 import "./Feed_sr.scss";
-import jelmi_profile from "../images/SR/jel_profile.jpg";
-import jelmi_feed from "../images/SR/jeolmi.jpg";
-import icon_heart from "../images/SR/heart.png";
-import icon_comment from "../images/SR/comment.png";
-import icon_share from "../images/SR/share.png";
-import icon_bookmark from "../images/SR/bookmark.png";
-import icon_more from "../images/SR/more.png";
+import jelmi_profile from "../../../images/SR/jel_profile.jpg";
+import jelmi_feed from "../../../images/SR/jeolmi.jpg";
+import icon_heart from "../../../images/SR/heart.png";
+import icon_comment from "../../../images/SR/comment.png";
+import icon_share from "../../../images/SR/share.png";
+import icon_bookmark from "../../../images/SR/bookmark.png";
+import icon_more from "../../../images/SR/more.png";
 
 export class Feed_sr extends React.Component {
   constructor() {

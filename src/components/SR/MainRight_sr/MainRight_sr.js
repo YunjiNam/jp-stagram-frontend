@@ -1,7 +1,7 @@
 import React from "react";
-import Others_sr from "./Others_sr";
+import Others_sr from "../Others_sr/Others_sr";
 import "./MainRight_sr.scss";
-import sori from "../images/SR/sori.jpg";
+import sori from "../../../images/SR/sori.jpg";
 
 export class MainRight_sr extends React.Component {
   render() {
