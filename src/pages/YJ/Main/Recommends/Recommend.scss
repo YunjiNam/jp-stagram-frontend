@@ -1,0 +1,52 @@
+.Recommend {
+    box-sizing: border-box;
+    width: 255px;
+    height: 48px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px 0px;
+
+    .recommendsImg {
+        width: 42px;
+        height: 42px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+        }
+    }
+
+    .recommendsBox {
+        padding-left: 14px;
+        cursor: pointer;
+
+        .recommendsName {
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+        .recommendsTime {
+            font-size: 12px;
+            font-weight: 400;
+            color: #8E8E8E;
+        }
+    }
+
+    .recommendsButton {
+        padding-left: 14px;
+
+        .recommendsBtn {
+            color: rgb(0, 149, 246);
+            border: none;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 0px;
+            cursor: pointer;
+        }
+    }
+}

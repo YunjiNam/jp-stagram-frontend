@@ -1,0 +1,206 @@
+
+
+.Article {
+    box-sizing: border-box;
+    max-width: 614px;
+    min-width: 314px;
+    /* border: 1px solid rgba(219,219,219,1); */
+    border-radius: 3px;
+    /* margin-top: 30px; */
+    margin-right: 28px;
+    /* background-color: rgb(255, 255, 255); */
+    article {
+        width: 100%;
+        margin-top: 30px;
+        border: 1px solid rgba(219,219,219,1);
+        background-color: rgb(255, 255, 255);
+        .headerWrap {
+            box-sizing: border-box;
+            width: 100%;
+            height: 60px;
+            padding: 16px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+            border-bottom: 0.5px solid rgb(239, 239, 239);
+            .feedProfileImg {
+                .feedProfileImgCut {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 42px;
+                    height: 42px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    img {
+                        width: 32px;
+                        height: 32px;
+                        border-radius: 50%;
+                        overflow: hidden;
+                    }
+                }
+            }
+            .feedProfileName {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                width: 505px;
+                height: 18px;
+                margin-left: 16px;
+                color: rgb(38, 38, 38);
+                font-size: 10px;
+                font-weight: 600;
+                cursor: pointer;
+            }
+            .moreBtn {
+                img {
+                    width: 16px;
+                    height: 16px;
+                    cursor: pointer;
+                }
+            }
+        }
+        .imageArea {
+            max-width: 614px;
+            min-width: 314px;
+            img {
+                width: 100%;
+            }
+        }
+        .contentsArea {
+            .contentsIconBar {
+                position: relative;
+                padding: 0px 10px;
+                width: 614px;
+                height: 40px;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: center;
+                box-sizing: border-box;
+                .contentsIcon {
+                    width: 40px;
+                    height: 40px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    cursor: pointer;
+                    img {
+                        width: 24px;
+                        height: 24px;
+                    }
+                    .heartIconActive {
+                        display: none;
+                        width: 10px;
+                        height: 10px;
+                        float: right;
+                        cursor: pointer;
+                    }
+                }
+                .contentsIcon:nth-child(4) {
+                    position: absolute;
+                    right: 16px;
+                
+                }
+            }
+            .likeUsersWrap {
+                .likeUsers {
+                    box-sizing: border-box;
+                    font-size: 14px;
+                    font-weight: 400;
+                    padding: 0px 16px 8px 16px;
+                    .goLikeUser {
+                        font-weight: bold;
+                        color: black;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .userComment {
+                font-size: 14px;
+                font-weight: 400;
+                padding: 0px 16px;
+                padding-bottom: 4px;
+                .commentTitle {
+                    padding-bottom: 4px;
+                    .goUser {
+                        font-weight: bold;
+                        color: black;
+                        cursor: pointer;
+                    }
+                }
+                .showComments {
+                    color: #8E8E8E;
+                    font-size: 14px;
+                    font-weight: 400;
+                    padding-bottom: 4px;
+                }
+                .userCommentBox {
+                    padding-bottom: 4px;
+                    .goUser {
+                        font-weight: bold;
+                        color: black;
+                        cursor: pointer;
+                    }
+                    .userCommentText {
+                        padding-left: 5px;
+                    }
+                    .heartSize {
+                        width: 10px;
+                        height: 10px;
+                        display: inline-block;
+                        float: right;
+                        cursor: pointer;
+                    }
+                }
+            }
+            .uploadTime {
+                font-size: 10px;
+                color: #8E8E8E;
+                padding: 0px 16px 4px 16px;
+            }
+            .commentArea {
+                padding-top: 4px;
+                height: 55px;
+                border-top: 0.5px solid rgb(239, 239, 239);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .inputCommentBox {
+                    padding-left: 16px;
+                    width: 500px;
+                    min-width: 200px;
+                    .inputComment {
+                        width: 80%;
+                        height: 18px;
+                        border: 0;
+                        resize: none;
+                        font-size: 14px;
+                        padding: 0px;
+                        outline: none;
+                        cursor: text;
+                    }
+                }
+                .inputCommentBtn {
+                    color: rgba(0, 149, 246, 0.3);
+                    border: none;
+                    font-size: 14px;
+                    font-weight: 600;
+                    padding: 0px;
+                    padding-right: 16px;
+                    /* transition: all 0.3s ease-in-out; */
+                }
+                .commentBtnActive {
+                    color: rgba(0, 149, 246, 1);
+                    cursor: pointer;
+                    /* transition: all 0.3s ease-in-out; */
+                }
+            }
+            
+        }
+    }
+}
+
+

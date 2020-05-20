@@ -1,0 +1,92 @@
+.Login {
+  .login-wrapper {
+    width: 350px;
+    height: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 100px;
+
+    border: 0.1px solid rgba(0, 0, 0, 0.1);
+    background-color: white;
+
+    .logo {
+      width: 180px;
+      height: 60px;
+      margin: 30px;
+    }
+
+    .login {
+      width: 270px;
+      padding-left: 10px;
+      border-radius: 5px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      background-color: #fafafa;
+      &:focus {
+        outline: none;
+        border: 1px solid rgba(0, 0, 0, 0.4);
+      }
+      &::placeholder {
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.1);
+      }
+    }
+
+    .id-input {
+      height: 37px;
+      margin-bottom: 7px;
+    }
+
+    .password-input {
+      height: 40px;
+      margin-bottom: 16px;
+    }
+
+    .login-btn {
+      width: 270px;
+      height: 32px;
+      margin-bottom: 60px;
+      background-color: #0095f6;
+      opacity: 0.3;
+      color: #ffff;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 5px;
+    }
+
+    .activeBtn {
+      opacity: 1;
+      cursor: pointer;
+    }
+
+    .forget_pw {
+      font-size: 13px;
+      font-weight: 600;
+      color: #375184;
+      cursor: pointer;
+    }
+  }
+
+  .signup-wrapper {
+    width: 350px;
+    height: 60px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.1px solid rgba(0, 0, 0, 0.1);
+    background-color: white;
+    font-size: 14px;
+    p {
+      color: black;
+      font-weight: 300;
+      margin-right: 5px;
+    }
+    span {
+      color: #0095f6;
+      font-weight: 700;
+      cursor: pointer;
+    }
+  }
+}

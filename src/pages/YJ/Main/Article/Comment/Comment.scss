@@ -1,0 +1,18 @@
+.userCommentBox {
+    padding-bottom: 4px;
+    .goUser {
+        font-weight: bold;
+        color: black;
+        cursor: pointer;
+    }
+    .userCommentText {
+        padding-left: 5px;
+    }
+    .heartSize {
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+        float: right;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,238 @@
+
+
+.navBar {
+    border-bottom: 1px solid rgba(219,219,219,1);
+    position: fixed;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: rgba(255,255,255,1);
+    z-index: 30;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .navBox {
+        box-sizing: border-box;
+        width: 935px;
+        height: 54px;
+        padding: 0px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .smallLogoWrap {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            /* width: 360px; */
+            height: 36px;
+            .smallLogo2 {
+                width: 103px;
+                height: 29px;
+                cursor: pointer;
+                padding-left: 10px;
+            }
+            .smallLogo1 {
+                width: 29px;
+                height: 29px;
+                padding-right: 15px;
+                border-right: 2px solid rgb(54, 54, 54);
+                cursor: pointer;
+            }
+        }
+        .searchBox {
+            width: 215px;
+            height: 28px;
+            /* align-items: stretch; */
+            input {
+                box-sizing: border-box;
+                width: 215px;
+                height: 28px;
+                border-radius: 3px;
+                border: 1px solid rgba(219,219,219,1);
+                text-align: center;
+                cursor: text;
+            }
+        }
+        .sideIcons {
+            /* width: 360px; */
+            padding-left: 50px;
+            height: 22px;
+            display: flex;
+            /* justify-content: flex-end; */
+            .icons {
+                width: 22px;
+                height: 22px;
+                padding-right: 22px;
+                cursor: pointer;
+            }
+            
+            .iconsL {
+                width: 22px;
+                height: 22px;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.Main {
+    display: flex;
+    justify-content: center;
+    margin-top: 54px;
+    background-color: rgba(250,250,250,1);
+    position: relative;
+
+    .feedsWrap {
+        box-sizing: border-box;
+        max-width: 614px;
+        min-width: 314px;
+        /* border: 1px solid rgba(219,219,219,1); */
+        border-radius: 3px;
+        /* margin-top: 30px; */
+        margin-right: 28px;
+        /* background-color: rgb(255, 255, 255); */
+    }
+
+    .main-right {
+        width: 293px;
+        position: relative;
+
+        .profileArea {
+            width: 293px;
+            height: 62px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            cursor: pointer;
+
+            .profileAreaImg {
+                width: 60px;
+                height: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    width: 50px;
+                    width: 50px;
+                    border-radius: 50%;
+                }
+            }
+
+            .profileAreaName {
+                font-size: 14px;
+                padding-left: 14px;
+                font-weight: bold;
+            }
+        }
+
+        .storyArea {
+            width: 291px;
+            height: 221px;
+            padding: 4px 16px;
+            border: 1px solid rgb(219, 219, 219);
+            border-radius: 4px;
+            background-color: rgb(255, 255, 255);
+
+            .storyAreaTitleWrap {
+                width: 259px;
+                height: 30px;
+                display: flex;
+                justify-content: space-between;
+                padding-top: 12px;
+
+                .storyAreaTitle {
+                    height: 18px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: #8E8E8E;
+                }
+                
+                .storyAreaMore {
+                    height: 18px;
+                    font-size: 12px;
+                    font-weight: 600;
+                    color: #000000;
+                    text-align: right;
+                    cursor: pointer;
+                }
+            }
+
+            .storyAreaStories {
+                height: 176px;
+                overflow: scroll;
+                margin-top: 8px;
+
+            }
+        }
+
+        .recommendArea {
+            width: 291px;
+            height: 195px;
+            margin: 12px 0px;
+            border: 1px solid rgb(219, 219, 219);
+            border-radius: 4px;
+            padding: 4px 16px;
+            /* margin-top: 4px; */
+            margin: 12px 0px;
+            background-color: rgb(255, 255, 255);
+        
+            .recommendAreaTitleWrap {
+                margin-top: 12px;
+                padding-bottom: 8px;
+                display: flex;
+                justify-content: space-between;
+
+                .recommendAreaTitle {
+                    height: 18px;
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: #8E8E8E;
+                }
+
+                .recommendAreaMore {
+                    height: 18px;
+                    font-size: 12px;
+                    font-weight: 600;
+                    color: #000000;
+                    text-align: right;
+                    cursor: pointer;
+                }
+            }
+
+            .recommendWrap {
+                display: flex;
+                flex-direction: column;
+
+                
+            }
+
+        }
+
+        .infoArea {
+            .infoContentsWrap {
+                margin-bottom: 16px;
+
+                .infoContents {
+                    display: inline-block;
+                    margin: 0px 2px;
+                    a {
+                        font-size: 11px;
+                        font-weight: 400;
+                        color: rgb(199, 199, 199);
+                        display: inline-block;
+                    }
+                }
+            }
+
+            .infoText {
+                font-size: 11px;
+                color: #7C7C7C;
+            }
+        }
+    }
+}
+

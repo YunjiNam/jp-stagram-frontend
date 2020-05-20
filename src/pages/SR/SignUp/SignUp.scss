@@ -1,0 +1,139 @@
+.SignUp {
+  background-color: rgb(250, 250, 250);
+  display: flex;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+  .articles {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .loginWrap {
+      background-color: rgb(255, 255, 255);
+      border: 1px solid rgba(219, 219, 219, 1);
+      width: 348px;
+      height: 500px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
+      border-radius: 1px;
+
+      p {
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 18px;
+        font-weight: 600;
+        padding-bottom: 25px;
+        margin: 0 48px;
+        text-align: center;
+      }
+
+      .westaLogo {
+        width: 175px;
+        height: 51px;
+        padding-top: 50px;
+        padding-bottom: 30px;
+      }
+      .inputWrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .inputWrap {
+          padding-bottom: 6px;
+          cursor: pointer;
+          .inputBox {
+            box-sizing: border-box;
+            width: 258px;
+            height: 36px;
+            border-radius: 3px;
+            border: 1px solid rgba(219, 219, 219, 1);
+            background-color: rgba(250, 250, 250, 1);
+            font-size: 14px;
+            color: rgba(38, 38, 38, 1);
+            align-items: center;
+            padding-left: 8px;
+            outline: none;
+            margin-bottom: 4px;
+          }
+        }
+        .loginBtnWrap {
+          padding: 8px 0px;
+          .loginBtn {
+            box-sizing: border-box;
+            width: 258px;
+            height: 30px;
+            padding: 5px 9px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            background-color: rgba(0, 149, 246, 0.5);
+            color: #fff;
+            transition: all 0.3s ease-in-out;
+          }
+          .btnActive {
+            background-color: rgba(0, 149, 246, 1);
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+          }
+        }
+        .contract {
+          color: rgba(0, 0, 0, 0.5);
+          font-size: 12px;
+        }
+      }
+    }
+    .signUpWrap {
+      background-color: rgb(255, 255, 255);
+      border: 1px solid rgba(219, 219, 219, 1);
+      width: 348px;
+      height: 50px;
+      padding-top: 10px;
+      margin-top: 10px;
+      padding-bottom: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      font-size: 14px;
+      font-weight: 300;
+      color: rgb(38, 38, 38);
+      border-radius: 1px;
+      span {
+        color: rgba(0, 149, 246, 1);
+        font-weight: 400;
+      }
+    }
+    .downloadAppWrap {
+      padding-top: 30px;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      .downloadApp {
+        text-align: center;
+        font-size: 14px;
+        font-weight: 400;
+        color: rgb(38, 38, 38);
+        padding-bottom: 20px;
+      }
+      .downloadIconWrap {
+        display: flex;
+        justify-content: center;
+        img {
+          width: 136px;
+          height: 40px;
+          cursor: pointer;
+          margin: 0px 5px;
+        }
+      }
+    }
+  }
+}
+.btnActive {
+  background-color: rgba(0, 149, 246, 1);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}

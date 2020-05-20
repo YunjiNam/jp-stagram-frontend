@@ -1,0 +1,39 @@
+.Story {
+    box-sizing: border-box;
+    width: 257px;
+    height: 52px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+
+    .storiesImg {
+        width: 44px;
+        height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+        }
+    }
+
+    .storiesBox {
+        padding-left: 14px;
+
+        .storiesName {
+            font-size: 14px;
+            font-weight: 600;
+            padding-bottom: 2px;
+        }
+
+        .storiesTime {
+            font-size: 10px;
+            font-weight: 400;
+            color: #8E8E8E;
+        }
+    }
+}
