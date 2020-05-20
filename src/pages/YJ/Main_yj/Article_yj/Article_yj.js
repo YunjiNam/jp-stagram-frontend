@@ -1,8 +1,8 @@
 import React from 'react';
-import CommentList from './Comment/CommentList';
-import './Article.scss';
+import CommentList_yj from './Comment/CommentList_yj';
+import './Article_yj.scss';
 
-class Article extends React.Component {
+class Article_yj extends React.Component {
 
     id = 1
     constructor() {
@@ -113,7 +113,7 @@ class Article extends React.Component {
                             </div>
                             <div id="addCommentArea">
                                
-                                <CommentList comments={comments} />
+                                <CommentList_yj comments={comments} />
                             </div>
                         </div>
                         <div className="uploadTime">
@@ -135,4 +135,4 @@ class Article extends React.Component {
     }
 }
 
-export default Article;
+export default Article_yj;

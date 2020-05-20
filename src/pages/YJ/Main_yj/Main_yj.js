@@ -1,10 +1,10 @@
 import React from 'react';
-import Article from './Article/Article';
-import Story from './Stories/Story';
-import Recommend from './Recommends/Recommend';
-import './Main.scss'
-import logo from "../../images/logo_text.png"
-class Main extends React.Component {
+import Article_yj from './Article_yj/Article_yj';
+import Story_yj from './Stories_yj/Story_yj';
+import Recommend_yj from './Recommends_yj/Recommend_yj';
+import './Main_yj.scss'
+import logo from "../../images/YJ/logo_text.png"
+class Main_yj extends React.Component {
     render() {
         return(
             <>
@@ -32,8 +32,8 @@ class Main extends React.Component {
                 </nav>
                 <main className="Main">
                     <div className="feedWrap">
-                        <Article />
-                        <Article />
+                        <Article_yj />
+                        <Article_yj />
                     </div>
                     <div className="main-right">
     
@@ -57,7 +57,7 @@ class Main extends React.Component {
                                 </div>
                             </div>
                             <div className="storyAreaStories">
-                                <Story />
+                                <Story_yj />
                             </div>
                         </div>
     
@@ -71,7 +71,7 @@ class Main extends React.Component {
                                 </div>
                             </div>
                             <div className="recommendWrap">
-                                <Recommend />
+                                <Recommend_yj />
                             </div>
                         </div>
     
@@ -101,4 +101,4 @@ class Main extends React.Component {
 }
 
 
-export default Main;
+export default Main_yj;

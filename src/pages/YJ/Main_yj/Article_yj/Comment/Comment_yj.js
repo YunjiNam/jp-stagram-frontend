@@ -1,8 +1,8 @@
 import React from 'react';
-import './Comment.scss';
+import './Comment_yj.scss';
 
 
-class Comment extends React.Component {
+class Comment_yj extends React.Component {
    
     render() {
         const { text } = this.props;
@@ -18,4 +18,4 @@ class Comment extends React.Component {
 
 
 
-export default Comment;
+export default Comment_yj;

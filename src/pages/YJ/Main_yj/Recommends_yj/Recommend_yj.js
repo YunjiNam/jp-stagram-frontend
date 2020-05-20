@@ -1,7 +1,7 @@
 import React from 'react';
-import './Recommend.scss'
+import './Recommend_yj.scss'
 
-class Recommend extends React.Component {
+class Recommend_yj extends React.Component {
     render() {
         return(
             <div className="Recommend">
@@ -24,4 +24,4 @@ class Recommend extends React.Component {
     }
 }
 
-export default Recommend;
+export default Recommend_yj;
