@@ -1,9 +1,9 @@
 import React from "react";
-import Others from "./Others";
-import "./MainRight.scss";
-import sori from "../images/sori.jpg";
+import Others_sr from "./Others_sr";
+import "./MainRight_sr.scss";
+import sori from "../images/SR/sori.jpg";
 
-export class MainRight extends React.Component {
+export class MainRight_sr extends React.Component {
   render() {
     return (
       <div className="MainRight">
@@ -22,7 +22,7 @@ export class MainRight extends React.Component {
           </div>
 
           <div className="profile-others">
-            <Others />
+            <Others_sr />
           </div>
         </div>
 
@@ -38,4 +38,4 @@ export class MainRight extends React.Component {
   }
 }
 
-export default MainRight;
+export default MainRight_sr;

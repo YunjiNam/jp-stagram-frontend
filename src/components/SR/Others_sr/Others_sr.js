@@ -1,8 +1,8 @@
 import React from "react";
-import sewoon from "../images/sewoon.jpg";
-import "./Others.scss";
+import sewoon from "../images/SR/sewoon.jpg";
+import "./Others_sr.scss";
 
-export class Others extends React.Component {
+export class Others_sr extends React.Component {
   render() {
     return (
       <div className="Others">
@@ -19,4 +19,4 @@ export class Others extends React.Component {
   }
 }
 
-export default Others;
+export default Others_sr;
