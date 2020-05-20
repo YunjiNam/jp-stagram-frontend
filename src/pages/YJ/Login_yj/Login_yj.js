@@ -89,7 +89,7 @@ class Login_yj extends React.Component {
           </div>
           <div className="signUpWrap">
             <p>계정이 없으신가요?</p>
-            <Link to="signup">
+            <Link to="signup_yj">
               <span> 가입하기</span>
             </Link>
           </div>

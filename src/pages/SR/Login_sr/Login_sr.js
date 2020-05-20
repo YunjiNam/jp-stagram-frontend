@@ -74,7 +74,9 @@ export class Login_sr extends React.Component {
 
         <div className="signup-wrapper">
           <p>계정이 없으신가요?</p>
-          <span>가입하기</span>
+          <Link to="signup_yj">
+            <span> 가입하기</span>
+          </Link>
         </div>
       </main>
     );
