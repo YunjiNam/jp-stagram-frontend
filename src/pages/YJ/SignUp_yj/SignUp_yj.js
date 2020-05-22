@@ -1,14 +1,12 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import "./SignUp_yj.scss";
-import biglogo from "../../images/YJ/logo_text.png";
+import biglogo from "../../../images/YJ/logo_text.png";
 
 class SignUp_yj extends React.Component {
   constructor() {
-    super()
-    this.state = {
-      
-    }
+    super();
+    this.state = {};
   }
   render() {
     return (

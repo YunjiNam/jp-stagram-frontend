@@ -9,6 +9,8 @@ import heart from "../../../images/SR/heart.png";
 import profile from "../../../images/SR/profile.png";
 
 export class Main_sr extends React.Component {
+  fetch() {}
+
   render() {
     return (
       <div className="Main">

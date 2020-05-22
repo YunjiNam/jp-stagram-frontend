@@ -13,43 +13,91 @@ export class Feed_sr extends React.Component {
     super();
     this.state = {
       comments: [],
-      content: "",
+      text: "",
+      username: "",
       isActive: false,
     };
   }
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-  };
+  componentDidMount() {
+    const token = localStorage.getItem("access_token");
+    fetch("http://10.58.0.163:8000/feed/comment", {
+      method: "GET",
+      headers: {
+        "Content-type": "aplicaiton/json",
+        Authorization: token,
+      },
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        let arr = [];
+        response.comments.map((txt) => arr.push(txt));
+        this.setState({
+          comments: arr,
+        });
+        console.log(this.state);
+      });
+  }
 
-  handleOnChange = (event) => {
+  //댓글창에 입력 시 state 변경
+  handleValue = (event) => {
     this.setState({
-      content: event.target.value,
+      text: event.target.value,
       isActive: true,
     });
   };
 
   handleOnClick = () => {
-    const arr = this.state.comments;
-    const new_arr = arr.concat(this.state.content);
+    const comments = this.state.comments;
+    const new_arr = comments.concat(this.state.text);
+    const token = localStorage.getItem("access_token");
 
-    this.setState(
-      {
-        comments: new_arr,
-        content: "",
+    this.setState({
+      comments: new_arr,
+      text: "",
+    });
+
+    fetch("http://10.58.0.163:8000/feed/comment", {
+      method: "POST",
+      headers: {
+        "content-type": "aplicaiton/json",
+        Authorization: token,
       },
+      body: JSON.stringify({
+        text: this.state.text,
+        feed_id: 1,
+      }),
+    })
+      .then((response) => response.json())
+      .then((response) => this.setState({ comments: response }));
+  };
 
-      () => {
-        console.log(this.content);
-      }
-    );
+  handleEnter = (e) => {
+    const token = localStorage.getItem("access_token");
+
+    if (e.key === "Enter") {
+      fetch("http://10.58.0.163:8000/feed/comment", {
+        method: "POST",
+        headers: {
+          "content-type": "aplicaiton/json",
+          Authorization: token,
+        },
+        body: JSON.stringify({
+          text: this.state.text,
+          feed_id: 1,
+        }),
+      })
+        .then((response) => response.json())
+        .then((response) => this.setState({ comments: response }));
+    }
   };
 
   render() {
-    const commentValue = this.state.comments;
-    const commentList = commentValue.map((content, index) => (
+    const reply = this.state.comments;
+
+    const commentList = reply.map((element, index) => (
       <li key={index} className="new">
-        x.xiaori {content}
+        {element.username} {element.content}
       </li>
     ));
 
@@ -94,11 +142,13 @@ export class Feed_sr extends React.Component {
 
         <div className="time">48분전</div>
 
-        <form className="comments-form" onSubmit={this.handleSubmit}>
+        <div className="comments-form">
           <input
-            onChange={this.handleOnChange}
+            onChange={this.handleValue}
+            onKeyPress={this.handleEnter}
             className="no-outline"
             type="text"
+            value={this.state.text}
             placeholder="댓글달기..."
           />
           <div className="btn-wrapper">
@@ -109,7 +159,7 @@ export class Feed_sr extends React.Component {
               게시
             </button>
           </div>
-        </form>
+        </div>
       </article>
     );
   }

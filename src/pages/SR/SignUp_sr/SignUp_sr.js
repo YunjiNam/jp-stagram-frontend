@@ -1,13 +1,59 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import "./SignUp_sr.scss";
-import biglogo from "../../images/YJ/logo_text.png";
+import biglogo from "../../../images/YJ/logo_text.png";
 
 class SignUp_sr extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      email_or_phone: "",
+      name: "",
+      id: "",
+      pw: "",
+    };
   }
+
+  //회원가입 버튼 클릭 시, input에 입력된 모든 정보가 POST요청으로 서버에 보내진다.
+  handleOnClick = () => {
+    fetch("http://10.58.3.147:8000/account/sign-up", {
+      method: "POST",
+      headers: {
+        "content-type": "aplication/json",
+      },
+      body: JSON.stringify({
+        email_or_phone: this.state.email_or_phone,
+        realname: this.state.name,
+        username: this.state.id,
+        password: this.state.pw,
+      }),
+    })
+      .then((response) => response.json())
+      .then(alert("회원가입에 성공했습니다. 👏🏻"));
+  };
+
+  changeFirstValue = (event) => {
+    this.setState({
+      email_or_phone: event.target.value,
+    });
+  };
+
+  changeNameValue = (event) => {
+    this.setState({
+      name: event.target.value,
+    });
+  };
+  changeIdValue = (event) => {
+    this.setState({
+      id: event.target.value,
+    });
+  };
+  changePwValue = (event) => {
+    this.setState({
+      pw: event.target.value,
+    });
+  };
+
   render() {
     return (
       <main className="SignUp">
@@ -20,8 +66,7 @@ class SignUp_sr extends React.Component {
                 <input
                   className="inputBox"
                   id="idInput"
-                  onChange={this.changeIdValue}
-                  onKeyUp={(this.changeBtnColor, this.enterGo)}
+                  onChange={this.changeFirstValue}
                   type="text"
                   placeholder="휴대폰 번호 또는 이메일 주소"
                 />
@@ -30,9 +75,8 @@ class SignUp_sr extends React.Component {
                 <input
                   className="inputBox"
                   id="psInput"
-                  onChange={this.changePwValue}
-                  onKeyUp={this.changeBtnColor}
-                  type="password"
+                  onChange={this.changeNameValue}
+                  type="text"
                   placeholder="성명"
                 />
               </div>
@@ -41,7 +85,6 @@ class SignUp_sr extends React.Component {
                   className="inputBox"
                   id="idInput"
                   onChange={this.changeIdValue}
-                  onKeyUp={(this.changeBtnColor, this.enterGo)}
                   type="text"
                   placeholder="사용자 이름"
                 />
@@ -50,14 +93,18 @@ class SignUp_sr extends React.Component {
                 <input
                   className="inputBox"
                   id="idInput"
-                  onChange={this.changeIdValue}
-                  onKeyUp={(this.changeBtnColor, this.enterGo)}
-                  type="text"
+                  onChange={this.changePwValue}
+                  type="password"
                   placeholder="비밀번호"
                 />
               </div>
               <div className="loginBtnWrap">
-                <button className="loginBtn btnActive">가입</button>
+                <button
+                  className="loginBtn btnActive"
+                  onClick={this.handleOnClick}
+                >
+                  가입
+                </button>
               </div>
               <p className="contract">
                 가입하면 Instagram의 약관, 데이터 정책 및 쿠키 정책에 동의하게
@@ -68,7 +115,7 @@ class SignUp_sr extends React.Component {
           <div className="signUpWrap">
             <p>
               계정이 있으신가요?{" "}
-              <Link to="/">
+              <Link to="/login_sr">
                 <span>로그인</span>
               </Link>
             </p>

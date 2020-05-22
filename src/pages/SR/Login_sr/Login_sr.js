@@ -8,23 +8,45 @@ export class Login_sr extends React.Component {
     super();
     this.state = {
       id: "",
+      email_or_phone: "",
       pw: "",
       isActive: false,
     };
   }
+
+  //로그인 버튼 클릭 시, 입력된 id,pw 데이터를 POST요청으로 보내고 토큰을 받아서 LS에 저장하고 메인으로 이동
+  handleOnClick = () => {
+    this.clickValue();
+    fetch("http://10.58.0.163:8000/account/sign-in", {
+      method: "POST",
+      headers: {
+        "content-type": "aplication/json",
+      },
+      body: JSON.stringify({
+        username: this.state.id,
+        email_or_phone: this.state.email_or_phone,
+        password: this.state.pw,
+      }),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+        if (response.message === "login successful!") {
+          localStorage.setItem("access_token", response.token);
+          this.goToMain.call(this);
+        } else {
+          alert("입력한 정보가 회원정보와 일치하지 않습니다.");
+        }
+      });
+  };
 
   goToMain() {
     this.props.history.push("/main_sr");
     console.log("this.props: ", this.props);
   }
 
-  handleOnClick = () => {
-    this.clickValue();
-    this.goToMain.call(this);
-  };
-
-  clickValue = (event) => {
-    console.log(this.state.id, this.state.pw);
+  clickValue = () => {
+    console.log(this.state.email_or_phone, this.state.id, this.state.pw);
   };
 
   handlePw = (event) => {
@@ -32,11 +54,18 @@ export class Login_sr extends React.Component {
   };
 
   handleId = (event) => {
-    this.setState({ id: event.target.value });
+    if (
+      event.target.value.includes("@") ||
+      event.target.value.match(/^[0-9]+$/) !== null
+    ) {
+      this.setState({ email_or_phone: event.target.value, id: "" });
+    } else {
+      this.setState({ id: event.target.value, email_or_phone: "" });
+    }
   };
 
   activeBtn = () => {
-    this.state.id.includes("@") && this.state.pw.length >= 5
+    this.state.pw.length >= 4
       ? this.setState({ isActive: true })
       : this.setState({ isActive: false });
   };
@@ -74,7 +103,7 @@ export class Login_sr extends React.Component {
 
         <div className="signup-wrapper">
           <p>계정이 없으신가요?</p>
-          <Link to="signup_yj">
+          <Link to="signup_sr">
             <span> 가입하기</span>
           </Link>
         </div>
