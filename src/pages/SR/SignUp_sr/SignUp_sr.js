@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import "./SignUp_sr.scss";
-import biglogo from "../../images/YJ/logo_text.png";
+import biglogo from "../../../images/YJ/logo_text.png";
 
 class SignUp_sr extends React.Component {
   constructor() {

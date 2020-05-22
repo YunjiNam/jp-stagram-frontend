@@ -4,23 +4,32 @@ import './Article_yj.scss';
 
 class Article_yj extends React.Component {
 
-    id = 1
+    
     constructor() {
         super()
         this.state = {        
             input: '',   
-            comments : [
-                { id: 0, text: 'test comment' }
-            ],
+            res_comments : [],
             activeCommentBtn : false
         }
     }
 
+    componentDidMount() {
+        fetch("http://10.58.0.163:8000/feed/comment", {
+            method: "GET",
+            headers: {
+                Authorization: localStorage.getItem("access_token")
+            }
+        })
+            .then(res => res.json())
+            .then(res => this.setState({
+                res_comments : res
+            }))
+    }    
     activeBtn = (event) => {
         (event.target.value).length > 0 
         ? this.setState({ activeCommentBtn : true}) 
         : this.setState({ activeCommentBtn : false}) 
-        
     }
 
     handleChange = (e) => {
@@ -30,14 +39,23 @@ class Article_yj extends React.Component {
     }
 
     handleCreate = () => {
-        const { input, comments } = this.state;
-        this.setState({
-            input: '',
-            comments: comments.concat({
-                id: this.id++,
-                text: input
+        const token = localStorage.getItem("access_token");
+        fetch('http://10.58.0.163:8000/feed/comment', {
+            method: "POST",
+            headers: {
+              'Content-Type': 'application/json',  
+              Authorization: token  
+            },
+            body: JSON.stringify({
+                text: this.state.input,
+                feed_id: 3
             })
+            
         })
+        .then(res => res.json())
+        .then(res => this.setState({
+            comments : res
+        }))
     }
 
     handleKeyPress = (e) => {
@@ -48,13 +66,14 @@ class Article_yj extends React.Component {
  
     render() {
         // 비구조화 할당
-        const { input, comments } = this.state;
+        const { input, res_comments } = this.state;
+        
         const {
             handleChange,
             handleCreate,
             handleKeyPress
         } = this;
-
+        
         return(
             <div className="Article">
                 <article>
@@ -73,6 +92,7 @@ class Article_yj extends React.Component {
                     </header>
                     <div className="imageArea">
                         <img alt="Filming a movie" src="https://scontent-gmp1-1.cdninstagram.com/v/t51.2885-15/e35/s1080x1080/95327031_534402874180705_4639342074206727486_n.jpg?_nc_ht=scontent-gmp1-1.cdninstagram.com&_nc_cat=1&_nc_ohc=rj98_XYriqsAX9mVVXj&oh=a75076577de0e123fa8bf4f28a1b5cb1&oe=5ECFFAB8" />
+                        
                     </div>
                     <div className="contentsArea">
                         <section className="contentsIconBar">
@@ -113,7 +133,7 @@ class Article_yj extends React.Component {
                             </div>
                             <div id="addCommentArea">
                                
-                                <CommentList_yj comments={comments} />
+                                <CommentList_yj commentswrap={this.state.res_comments["comments"]} />
                             </div>
                         </div>
                         <div className="uploadTime">

@@ -1,15 +1,64 @@
 import React from "react";
 import { withRouter, Link } from "react-router-dom";
 import "./SignUp_yj.scss";
-import biglogo from "../../images/YJ/logo_text.png";
+import biglogo from "../../../images/YJ/logo_text.png";
 
 class SignUp_yj extends React.Component {
   constructor() {
     super()
     this.state = {
-      
+      // emailValue: "",
+      // PhoneValue:"",
+      email_or_phone_Value:"",
+      userName: "",
+      userId: "",
+      pwValue: "",
     }
   }
+
+  handleSignUp = () => {
+    fetch('http://10.58.3.147:8000/account/sign-up', {
+      method: "POST",     
+      body: JSON.stringify({        
+        email_or_phone: this.state.email_or_phone_Value,    
+        realname: this.state.userName,   
+        username: this.state.userId,    
+        password: this.state.pwValue    
+      })
+    })
+    .then(res => res.json())
+    .then(res => console.log(res))
+  }
+
+  changePhoneEmailValue = (event) => {
+   
+    this.setState({
+      email_or_phone_Value: event.target.value
+    });
+  }
+  changeNameValue = (event) => {
+    this.setState({
+      userName: event.target.value,
+    });
+  }
+  changeIdValue = (event) => {
+    this.setState({
+      userId: event.target.value,
+    });
+  };
+
+  changePwValue = (event) => {
+    this.setState({
+      pwValue: event.target.value,
+    });
+  };
+  
+  changeBtnColor = () => {
+    (this.state.email_or_phone_Value.includes("@") && this.state.pwValue.length >= 5) || (this.state.email_or_phone_Value !== "" && this.state.pwValue.length >= 5)
+      ? this.setState({ btnActive: true })
+      : this.setState({ btnActive: false });
+  };
+
   render() {
     return (
       <main className="SignUp">
@@ -17,13 +66,13 @@ class SignUp_yj extends React.Component {
           <div className="loginWrap">
             <img className="westaLogo" alt="Logo" src={biglogo} />
             <p>친구들의 사진과 동영상을 보려면 가입하세요.</p>
-            <form className="inputWrapper">
+            <div className="inputWrapper">
               <div className="inputWrap">
                 <input
                   className="inputBox"
-                  id="idInput"
-                  onChange={this.changeIdValue}
-                  onKeyUp={(this.changeBtnColor, this.enterGo)}
+                  id="emailInput"
+                  onChange={this.changePhoneEmailValue}
+                  onKeyUp={this.changeBtnColor}
                   type="text"
                   placeholder="휴대폰 번호 또는 이메일 주소"
                 />
@@ -31,10 +80,10 @@ class SignUp_yj extends React.Component {
               <div className="inputWrap">
                 <input
                   className="inputBox"
-                  id="psInput"
-                  onChange={this.changePwValue}
+                  id="nameInput"
+                  onChange={this.changeNameValue}
                   onKeyUp={this.changeBtnColor}
-                  type="password"
+                  type="text"
                   placeholder="성명"
                 />
               </div>
@@ -43,7 +92,7 @@ class SignUp_yj extends React.Component {
                   className="inputBox"
                   id="idInput"
                   onChange={this.changeIdValue}
-                  onKeyUp={(this.changeBtnColor, this.enterGo)}
+                  onKeyUp={this.changeBtnColor}
                   type="text"
                   placeholder="사용자 이름"
                 />
@@ -51,21 +100,23 @@ class SignUp_yj extends React.Component {
               <div className="inputWrap">
                 <input
                   className="inputBox"
-                  id="idInput"
-                  onChange={this.changeIdValue}
-                  onKeyUp={(this.changeBtnColor, this.enterGo)}
-                  type="text"
+                  id="pwInput"
+                  onChange={this.changePwValue}
+                  onKeyUp={this.changeBtnColor}
+                  type="password"
                   placeholder="비밀번호"
                 />
               </div>
               <div className="loginBtnWrap">
-                <button className="loginBtn btnActive">가입</button>
+                <button onClick={this.handleSignUp} className={`loginBtn ${
+                    this.state.btnActive ? "btnActive" : ""
+                  }`}>가입</button>
               </div>
               <p className="contract">
                 가입하면 Instagram의 약관, 데이터 정책 및 쿠키 정책에 동의하게
                 됩니다.
               </p>
-            </form>
+            </div>
           </div>
           <div className="signUpWrap">
             <p>

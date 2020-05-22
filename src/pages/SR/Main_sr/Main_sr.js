@@ -11,7 +11,7 @@ import profile from "../../../images/SR/profile.png";
 export class Main_sr extends React.Component {
   render() {
     return (
-      <div className="Main">
+      <div className="Main_sr">
         <nav>
           <div className="nav-container">
             <div className="left">

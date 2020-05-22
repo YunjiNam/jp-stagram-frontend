@@ -3,10 +3,10 @@ import Comment_yj from './Comment_yj';
 
 class CommentList_yj extends React.Component {
     render() {
-        const { comments } = this.props;
-        const commentList = comments.map(
-            ({id, text }) => (
-                <Comment_yj text={text} key={id} />
+        const { commentswrap } = this.props;
+        console.log(this.props)
+        const commentList = commentswrap && commentswrap.map((post, idx) => (
+                <Comment_yj key={idx} text={post.content} userI={post.username} />
             )
         );
         return(

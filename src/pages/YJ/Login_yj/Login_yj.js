@@ -9,29 +9,65 @@ class Login_yj extends React.Component {
     this.state = {
       idValue: "",
       pwValue: "",
-      btnActive: false
+      btnActive: false,
+      email_or_phone_Value: ""
     };
+  }
+  
+  //로그인 
+  SaveLogin = () => {
+    fetch('http://10.58.0.163:8000/account/sign-in', {
+      method: "POST",       
+      body: JSON.stringify({       
+        email_or_phone: this.state.email_or_phone_Value,  
+        username: this.state.idValue,
+        password: this.state.pwValue  
+      })
+    })
+      .then(res => res.json())
+      // .then(res => console.log(res))
+      .then(res => {
+        if (res.message == 'login successful!') {
+          alert('로그인되었습니다');
+          localStorage.setItem('access_token', res.token)
+          this.props.history.push("/main_yj")
+        } else {
+          alert("아이디, 비밀번호를 확인하세요");
+        }
+      })
   }
 
   changeIdValue = (event) => {
-    this.setState({
-      idValue: event.target.value,
-    });
+    if(event.target.value.includes('@') || event.target.value.match(/^[0-9]+$/) != null ) {
+      this.setState({
+        email_or_phone_Value: event.target.value,
+        idValue: ""
+      });
+    } else if(!(event.target.value.includes('@') || event.target.value.match(/^[0-9]+$/) != null )) {
+        this.setState({
+          idValue: event.target.value,
+          email_or_phone_Value: ""
+        });
+    }
+    // this.setState({
+    //   email_or_phone_Value: event.target.value
+    // });
   };
 
   changePwValue = (event) => {
-    this.setState({
-      pwValue: event.target.value,
-    });
+      this.setState({
+        pwValue: event.target.value
+      });
+    
   };
   showValue = () => {
     console.log("ID : ", this.state.idValue, "Password : ", this.state.pwValue);
-    this.state.idValue.includes("@") && this.state.pwValue.length >= 5
+    this.state.email_or_phone_Value.includes("@") && this.state.pwValue.length >= 5
       ? this.props.history.push("/main_yj")
       : alert("다시 입력해 주새요!");
   };
   changeBtnColor = () => {
-    this.state.idValue.includes("@") && this.state.pwValue.length >= 5
+    (this.state.email_or_phone_Value.includes("@") && this.state.pwValue.length >= 5) || (this.state.idValue != "" && this.state.pwValue.length >= 5)
       ? this.setState({ btnActive: true })
       : this.setState({ btnActive: false });
   };
@@ -48,7 +84,7 @@ class Login_yj extends React.Component {
                   className="inputBox"
                   id="idInput"
                   onChange={this.changeIdValue}
-                  onKeyUp={(this.changeBtnColor, this.enterGo)}
+                  onKeyUp={this.changeBtnColor}
                   type="text"
                   placeholder="전화번호, 사용자 이름 또는 이메일"
                 />
@@ -68,7 +104,8 @@ class Login_yj extends React.Component {
                   className={`loginBtn ${
                     this.state.btnActive ? "btnActive" : ""
                   }`}
-                  onClick={this.showValue}
+                  // onClick={this.showValue}
+                  onClick={this.SaveLogin}
                   type="button"
                 >
                   로그인
